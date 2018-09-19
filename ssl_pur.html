@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <title>ssl证书选购</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="./css/all_css.css" type="text/css">
+    <script type="text/javascript" src="./js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="./js/price.js"></script>
+    <script type="text/javascript" src="./js/ssl.js"></script>
+    <script type="text/javascript" src="./js/sslpur.js"></script>
+    <script type="text/javascript" src="./js/YFNav.js"></script>
+</head>
+
+<body>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("#yfTopBar").YFNav();
+            $(".yftag").YFTag();
+            $("#navcloud").find(".nav_mainr_img").hover(function() {
+                $(".mainr_con_hover", $(this)).slideDown(500);
+            }, function() {
+                $(".mainr_con_hover", $(this)).slideUp(500);
+            });
+        });
+        $(function() {
+            $("#mymember_club").hover(function() {
+                var set_left = $('#mymember_club').position().left;
+                $("#member_club_block").css("left", set_left);
+                $("#member_club_block").css('display', 'block');
+            }, function() {
+                $("#member_club_block").css('display', 'none');
+                $("#member_club_block").hover(function() {
+                    $("#member_club_block").css('display', 'block');
+                }, function() {
+                    $("#member_club_block").css('display', 'none');
+                });
+            });
+            $("#member_club_block").find(".member_club_column").hover(function() {
+                $(this).find("span").css('color', '#fb6902');
+            }, function() {
+                $(this).find("span").css('color', '#000000');
+            });
+        });
+        $(function() {
+            //多行应用
+            var _wrap = $('.header_show'); //定义滚动区域
+            var _interval = 2000; //定义滚动间隙时间
+            var _moving; //需要清除的动画
+            _wrap.hover(function() {
+                clearInterval(_moving); //当鼠标在滚动区域中时,停止滚动
+            }, function() {
+                _moving = setInterval(function() {
+                    var _field = _wrap.find('.header_show_li:first'); //此变量不可放置于函数起始处,li:first取值是变化的
+                    var _h = _field.height(); //取得每次滚动高度
+                    _field.animate({
+                        marginTop: -_h + 'px'
+                    }, 600, function() { //通过取负margin值,隐藏第一行
+                        _field.css('marginTop', 0).appendTo(_wrap); //隐藏后,将该行的margin值置零,并插入到最后,实现无缝滚动
+                    })
+                }, _interval) //滚动间隔时间取决于_interval
+            }).trigger('mouseleave'); //函数载入时,模拟执行mouseleave,即自动滚动
+        });
+    </script>
+
+    <!-- header start -->
+
+    <div class="header_box">
+        <div class="topbox">
+
+            <div class="header_show">
+                <div class="header_show_li"><a href="/amain_md_news_ac_newsdetail1_id_499.html">有孚云管理平台升级</a> </div>
+                <div class="header_show_li"><a href="/amain_md_news_ac_newsdetail1_id_498.html">会员实名通知</a> </div>
+            </div>
+
+            <ul class="header_list">
+
+                <li><a href="https://passport.sundns.com/index.php?client_id=sundns">登录</a>
+                    <li class="header_mymember"><a href="https://passport.sundns.com/index.php?r=index/regist&client_id=sundns">免费注册</a></li>
+                    <li class="header_split"><a href="/amain_md_html_ac_pay.html#locateto">付款方式</a></li>
+                    <li><a href="http://icp.sundns.com">备案</a></li>
+            </ul>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <!-- header end -->
+    <!-- nav start -->
+    <div class="nav_box">
+        <!-- mymember_club -->
+        <!-- mymember_club -->
+        <div id="yfTopBar" class="nav">
+            <div class="logo"><a href="/index.php"></a></div>
+            <!--<a href="/amain_md_html_ac_newest_activity.html" class="nav_hot_activity">最新活动</a>-->
+            <ul class="nav_list" id="nav_menu">
+                <li>
+                    <a class="nav_product_2017" href="#"><i class="nav_p_icon"></i>产品</a>
+                    <div class="nav_list_box none">
+                        <div class="list_main">
+                            <div class="list_main_l">
+                                <a class="selected" href="/main_md_domain_ac_whois.html">域名服务</a>
+                                <a href="/web_hosting.php?script=asp">虚拟主机</a>
+                                <a href="/cloud_server.php">云服务器</a>
+                                <a href="/main_md_sitepro_ac_siteproproduct.html">成品网站</a>
+                                <a href="/main_md_exchange_ac_mailbox.html?a=part0">企业邮箱</a>
+                                <a href="http://ssl.sundns.com">安全证书</a>
+                            </div>
+                            <div class="list_main_content">
+                                <div class="list_main_r">
+                                    <dl>
+                                        <dt>常用后缀</dt>
+                                        <dd><a href="/main_md_domain_ac_com.html">.com</a></dd>
+                                        <dd><a href="/main_md_domain_ac_cn.html">.cn</a></dd>
+                                        <dd><a href="/main_md_domain_ac_net.html">.net</a></dd>
+                                        <!--<dd><a href="/main_md_domain_ac_org.html">.org</a></dd>-->
+                                    </dl>
+                                    <dl>
+                                        <dt>域名注册</dt>
+                                        <dd><a href="/main_md_domain_ac_whois.html">英文域名</a></dd>
+                                        <dd><a href="/main.php?md=domain&ac=whois&domainch=1">中文域名</a></dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>域名解析</dt>
+                                        <dd><a target="_blank" href="/main_md_domain_ac_zndns.html">阳光DNS</a></dd>
+                                    </dl>
+                                    <dl style="display:none">
+                                        <dt>域名交易</dt>
+                                        <dd><a href="http://try.sundns.com/member.php?module=mytransferin_international">域名转入</a></dd>
+                                        <dd><a href="#">二手域名购买</a></dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>域名帮助</dt>
+                                        <dd><a target="_blank" href="http://whois.sundns.com">whois信息查询</a></dd>
+                                        <dd><a target="_blank" href="http://help.sundns.com/">帮助中心</a></dd>
+                                    </dl>
+                                </div>
+                                <div class="list_main_r">
+                                    <dl>
+                                        <dt>ASP云虚拟主机</dt>
+                                        <dd><a href="/web_hosting.php?script=asp&spaceindex=1">ASP基础云</a></dd>
+                                        <dd><a href="/web_hosting.php?script=asp&spaceindex=2">ASP标准云</a></dd>
+                                        <dd><a href="/web_hosting.php?script=asp&spaceindex=3">ASP企业云</a></dd>
+                                        <dd><a href="/web_hosting.php?script=asp&spaceindex=4">ASP增强云</a></dd>
+                                        <dd><a href="/web_hosting.php?script=asp&spaceindex=5">ASP豪华云</a></dd>
+                                        <dd><a href="/web_hosting.php?script=asp&spaceindex=6">ASP旗舰云</a></dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>.NET云虚拟主机</dt>
+                                        <dd><a href="/web_hosting.php?script=net&spaceindex=1">.NET基础云</a></dd>
+                                        <dd><a href="/web_hosting.php?script=net&spaceindex=2">.NET标准云</a></dd>
+                                        <dd><a href="/web_hosting.php?script=net&spaceindex=3">.NET企业云</a></dd>
+                                        <dd><a href="/web_hosting.php?script=net&spaceindex=4">.NET增强云</a></dd>
+                                        <dd><a href="/web_hosting.php?script=net&spaceindex=5">.NET豪华云</a></dd>
+                                        <dd><a href="/web_hosting.php?script=net&spaceindex=6">.NET旗舰云</a></dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>PHP云虚拟主机</dt>
+                                        <dd><a href="/web_hosting.php?script=php&spaceindex=1">PHP基础云</a></dd>
+                                        <dd><a href="/web_hosting.php?script=php&spaceindex=2">PHP标准云</a></dd>
+                                        <dd><a href="/web_hosting.php?script=php&spaceindex=3">PHP企业云</a></dd>
+                                        <dd><a href="/web_hosting.php?script=php&spaceindex=4">PHP增强云</a></dd>
+                                        <dd><a href="/web_hosting.php?script=php&spaceindex=5">PHP豪华云</a></dd>
+                                        <dd><a href="/web_hosting.php?script=php&spaceindex=6">PHP旗舰云</a></dd>
+                                    </dl>
+                                </div>
+                                <div id="navcloud" class="list_main_r">
+                                    <dl>
+                                        <dt>华东</dt>
+                                        <dd>
+                                            <div class="nav_mainr_img">
+                                                <div class="mainr_con_org">
+                                                    <div class="tit">华东</div>
+                                                    <ul>
+                                                        <li class="safe">
+                                                            <p>安全</p>
+                                                        </li>
+                                                        <li class="stable">
+                                                            <p>稳定</p>
+                                                        </li>
+                                                        <li class="ie">
+                                                            <p>多线</p>
+                                                        </li>
+                                                        <li class="elastic">
+                                                            <p>弹性</p>
+                                                        </li>
+                                                    </ul>
+                                                    <div class="clear"></div>
+                                                </div>
+                                                <div class="mainr_con_hover">
+                                                    <div class="hover_content">
+                                                        <a href="/cloud_server.php" class="link">马上开通</a>
+                                                        <p class="mid">电信<br/>BGP</p>
+                                                        <p>阳光互联十年技术沉淀只为你</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>华北</dt>
+                                        <dd>
+                                            <div class="nav_mainr_img">
+                                                <div class="mainr_con_org">
+                                                    <div class="tit">华北</div>
+                                                    <ul>
+                                                        <li class="safe">
+                                                            <p>安全</p>
+                                                        </li>
+                                                        <li class="stable">
+                                                            <p>稳定</p>
+                                                        </li>
+                                                        <li class="ie">
+                                                            <p>多线</p>
+                                                        </li>
+                                                        <li class="elastic">
+                                                            <p>弹性</p>
+                                                        </li>
+                                                    </ul>
+                                                    <div class="clear"></div>
+                                                </div>
+                                                <div class="mainr_con_hover">
+                                                    <div class="hover_content">
+                                                        <a href="/cloud_server.php" class="link">马上开通</a>
+                                                        <p class="mid">电信<br/>BGP</p>
+                                                        <p>阳光互联十年技术沉淀只为你</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>香港</dt>
+                                        <dd>
+                                            <div class="nav_mainr_img">
+                                                <div class="mainr_con_org">
+                                                    <div class="tit">香港</div>
+                                                    <ul>
+                                                        <li class="icp">
+                                                            <p>免备案</p>
+                                                        </li>
+                                                        <li class="ip">
+                                                            <p>独享IP</p>
+                                                        </li>
+                                                        <li class="ie">
+                                                            <p>多线</p>
+                                                        </li>
+                                                        <li class="elastic">
+                                                            <p>弹性</p>
+                                                        </li>
+                                                    </ul>
+                                                    <div class="clear"></div>
+                                                </div>
+                                                <div class="mainr_con_hover">
+                                                    <div class="hover_content">
+                                                        <a href="http://www.cloudmap.hk/cloud_server.php" class="link">马上开通</a>
+                                                        <p class="mid">免备案<br/>独享IP</p>
+                                                        <p>阳光互联十年技术沉淀只为你</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </dd>
+                                    </dl>
+                                </div>
+                                <div class="list_main_r">
+                                    <dl>
+                                        <dt>PC+手机版</dt>
+                                        <dd><a href="/main_md_sitepro_ac_siteproproduct.html">标准版</a></dd>
+                                        <dd><a href="/main_md_sitepro_ac_siteproproduct.html">营销版</a></dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>PC版</dt>
+                                        <dd><a href="/main_md_sitepro_ac_siteproproduct.html">标准版</a></dd>
+                                        <dd><a href="/main_md_sitepro_ac_siteproproduct.html">营销版</a></dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>手机版</dt>
+                                        <dd><a href="/main_md_sitepro_ac_siteproproduct.html">标准版</a></dd>
+                                        <dd><a href="/main_md_sitepro_ac_siteproproduct.html">营销版</a></dd>
+                                    </dl>
+
+                                </div>
+                                <div id="nav_product_emailbox" class="list_main_r">
+                                    <dl>
+                                        <dt>企业邮</dt>
+                                        <dd><a href="javascript:void(0)" yf-mailtype="base" yf-user="5">企业邮2013[5用户]</a></dd>
+                                        <dd><a href="javascript:void(0)" yf-mailtype="base" yf-user="10">企业邮2013[10用户]</a></dd>
+                                        <dd><a href="javascript:void(0)" yf-mailtype="base" yf-user="20">企业邮2013[20用户]</a></dd>
+                                        <dd><a href="javascript:void(0)" yf-mailtype="base" yf-user="50">企业邮2013[50用户]</a></dd>
+                                        <dd><a href="javascript:void(0)" yf-mailtype="base" yf-user="100">企业邮2013[100用户]</a></dd>
+                                        <dd><a href="javascript:void(0)" yf-mailtype="base" yf-user="200">企业邮2013[200用户]</a></dd>
+                                    </dl>
+                                    <!--<dl>
+									<dt>商务G邮</dt>
+									<dd><a href="javascript:void(0)" yf-mailtype="crop" yf-user="5">商务邮2013[5用户]</a></dd>
+									<dd><a href="javascript:void(0)" yf-mailtype="crop" yf-user="10">商务邮2013[10用户]</a></dd>
+									<dd><a href="javascript:void(0)" yf-mailtype="crop" yf-user="20">商务邮2013[20用户]</a></dd>
+									<dd><a href="javascript:void(0)" yf-mailtype="crop" yf-user="50">商务邮2013[50用户]</a></dd>
+									<dd><a href="javascript:void(0)" yf-mailtype="crop" yf-user="100">商务邮2013[100用户]</a></dd>
+									<dd><a href="javascript:void(0)" yf-mailtype="crop" yf-user="200">商务邮2013[200用户]</a></dd>
+								</dl>-->
+                                    <dl>
+                                        <dt>协作邮</dt>
+                                        <dd><a href="javascript:void(0)" yf-mailtype="coll" yf-user="5">协作邮2013[5用户]</a></dd>
+                                        <dd><a href="javascript:void(0)" yf-mailtype="coll" yf-user="10">协作邮2013[10用户]</a></dd>
+                                        <dd><a href="javascript:void(0)" yf-mailtype="coll" yf-user="20">协作邮2013[20用户]</a></dd>
+                                        <dd><a href="javascript:void(0)" yf-mailtype="coll" yf-user="50">协作邮2013[50用户]</a></dd>
+                                        <dd><a href="javascript:void(0)" yf-mailtype="coll" yf-user="100">协作邮2013[100用户]</a></dd>
+                                        <dd><a href="javascript:void(0)" yf-mailtype="coll" yf-user="200">协作邮2013[200用户]</a></dd>
+                                    </dl>
+                                </div>
+                                <div class="list_main_r">
+                                    <dl>
+                                        <dt>Symantec</dt>
+                                        <dd><a href="https://ssl.sundns.com/?cert=Symantec&type=EV">EV SSL证书</a></dd>
+                                        <dd><a href="https://ssl.sundns.com/?cert=Symantec&type=OV">OV SSL证书</a></dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>Geotrust</dt>
+                                        <dd><a href="https://ssl.sundns.com/?cert=Geotrust&type=EV">EV SSL证书</a></dd>
+                                        <dd><a href="https://ssl.sundns.com/?cert=Geotrust&type=OV">OV SSL证书</a></dd>
+                                        <dd><a href="https://ssl.sundns.com/?cert=Geotrust&type=DV">DV SSL证书</a></dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>GlobalSign</dt>
+                                        <dd><a href="https://ssl.sundns.com/?cert=GlobalSign&type=EV">EV SSL证书</a></dd>
+                                        <dd><a href="https://ssl.sundns.com/?cert=GlobalSign&type=OV">OV SSL证书</a></dd>
+                                        <dd><a href="https://ssl.sundns.com/?cert=GlobalSign&type=DV">DV SSL证书</a></dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>Entrust</dt>
+                                        <dd><a href="https://ssl.sundns.com/?cert=Entrust&type=EV">EV SSL证书</a></dd>
+                                        <dd><a href="https://ssl.sundns.com/?cert=Entrust&type=OV">OV SSL证书</a></dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>Thawte</dt>
+                                        <dd><a href="https://ssl.sundns.com/?cert=Thawte&type=EV">EV SSL证书</a></dd>
+                                        <dd><a href="https://ssl.sundns.com/?cert=Thawte&type=OV">OV SSL证书</a></dd>
+                                        <dd><a href="https://ssl.sundns.com/?cert=Thawte&type=DV">DV SSL证书</a></dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>RapidSSL</dt>
+                                        <dd><a href="https://ssl.sundns.com/?cert=RapidSSL&type=DV">DV SSL证书</a></dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>在线工具</dt>
+                                        <dd><a href="https://ssl.sundns.com/tool/csrgenerator">CSR在线生成</a></dd>
+                                        <dd><a href="https://ssl.sundns.com/tool/sealinstall">签章脚本生成</a></dd>
+                                    </dl>
+                                </div>
+                            </div>
+                            <div style="clear:both"></div>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="/main_md_domain_ac_whois.html">域名注册</a></li>
+                <li><a href="/web_hosting.php?script=asp">虚拟主机</a></li>
+                <li><a href="/cloud_server.php">云服务器</a></li>
+                <li><a href="http://ssl.sundns.com">SSL证书</a></li>
+
+                <li><a href="/main_md_sitepro_ac_siteproproduct.html">成品网站</a></li>
+                <li><a href="/main_md_exchange_ac_mailbox.html">企业邮局</a></li>
+                <li><a href="/amain_md_news_ac_tradelist.html">行业资讯</a></li>
+                <!--			<li><a class="nav_support" href="http://help.sundns.com">支持</a></li>-->
+                <!--			<li><a class="nav_about" href="/amain_md_html_ac_profile.html#locateto">关于我们</a></li>-->
+                <!--			<li><a class="nav_more" href="#">更多</a></li>-->
+                <!--			<li><a class="nav_record" href="http://icp.sundns.com">备案中心</a></li>-->
+
+                <li><a class=" nav_record shoppingcart" href="/shoppingcart.php" target="_blank">购物车</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- nav end-->
+    <!-- buyssl start-->
+    <div class="sec_main sec_main_ssl">
+        <div class="ssl_item_title">
+            <h1>证书类型</h1>
+            <i></i>
+        </div>
+        <div class="buy_body">
+            <div class="buy_contain">
+                <ul class="buy_con_ul">
+                    <li class="buy_list">
+                        <div class="buy_list_tit">
+                            <span>证书品牌</span>
+                        </div>
+                        <div class="buy_list_con">
+                            <div class="buy_list_block" id="ssl_brand">
+                                <a class="buy_click active buy_domain1" id="Symantec" categoryId="1000">
+                                    <p class="text">Symantec</p>
+                                </a>
+                                <a class="buy_click buy_domain2" id="GeoTrust" categoryId="1001">
+                                    <p class="text"> GeoTrust</p>
+                                </a>
+                                <a class="buy_click buy_domain3" id="GlobalSign" categoryId="1002">
+                                    <p class="text">GlobalSign</p>
+                                </a>
+                                <a class="buy_click buy_domain4" id="Entrust" categoryId="1003">
+                                    <p class="text">Entrust</p>
+                                </a>
+                                <a class="buy_click buy_domain5" id="CFCA" categoryId="1004">
+                                    <p class="text">CFCA</p>
+                                </a>
+                            </div>
+                            <div class="buy_list_info">
+                                <p>
+                                    Symantec是 SSL/TLS 证书的领先提供商，为全球一百多万台网络服务器提供安全防护。该品牌证书由工信部许可设立的电子认证服务机构“天威诚信”提供鉴证服务。</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="buy_list">
+                        <div class="buy_list_tit">
+                            <span>证书种类</span>
+                        </div>
+                        <div class="buy_list_con">
+                            <div class="buy_list_block" id="ssl_type">
+                                <!-- <a class="buy_click">
+                                    <p class="text">快速型DV SSL</p>
+                                </a>
+                                <a class="buy_click active">
+                                    <p class="text">入门型DV SSL</p>
+                                </a>
+                                <a class="buy_click">
+                                    <p class="text">保真型OV SSL</p>
+                                </a>
+                                <a class="buy_click">
+                                    <p class="text">保真型EV SSL</p>
+                                </a> -->
+                            </div>
+                            <div class="buy_list_info">
+                                <p>
+                                    OV SSL,提供加密功能,对申请者做严格的身份审核验证,提供可信身份证明</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="buy_list">
+                        <div class="buy_list_tit">
+                            <span>域名类型</span>
+                        </div>
+                        <div class="buy_list_con">
+                            <div class="buy_list_block" id="ssl_domain_type">
+                            </div>
+                            <div class="buy_list_info">
+                                <p>
+                                    保护多个明细域名,例如: buy1.example.com, buy2.example.com, next.buy.example2.com, 上述三个明细子域名计算为三个域名</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="buy_list">
+                        <div class="buy_list_tit">
+                            <span>域名个数</span>
+                        </div>
+                        <div class="buy_list_con">
+                            <div class="buy_list_block" id="domain_count">
+                            </div>
+                            <div class="buy_list_info">
+                                <p>
+                                    您的数字证书可以同时保护5个域名,您需要一次性提交全部5个域名</p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <div class="buy_cut_line_wrap">
+                    <div class="buy_cut_line"></div>
+                </div>
+                <ul class="buy_con_ul">
+                    <li class="buy_list">
+                        <div class="buy_list_tit">
+                            <span>购买个数</span>
+                        </div>
+                        <div class="buy_list_con">
+                            <div class="buy_list_block">
+                                <span class="buy_input_num">
+									<input class="buy_subtract" type="button" >
+									<input class="num" value="1" type="text">
+									<input class="buy_add" type="button">
+								</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="buy_list">
+                        <div class="buy_list_tit">
+                            <span>购买时长</span>
+                        </div>
+                        <div class="buy_list_con">
+                            <div class="buy_list_block" id="buytime_count">
+                                <a class="buy_click  active" data-id="1">
+                                    <p class="text">1年</p>
+                                </a>
+
+                                <a class="buy_click" data-id="2">
+                                    <p class="text">2年</p>
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="buy_result">
+                <div class="buy_result_title">当前配置
+                </div>
+                <table class="buy_table">
+                    <tr class="buy_result_brief">
+                        <td class="buy_result_brief_list">
+                            <span class="buy_result_name">证书品牌:</span>
+                            <span class="buy_result_value ssl_brand">sym</span>
+                        </td>
+                        <td class="buy_result_brief_list">
+                            <span class="buy_result_name">域名类型:</span>
+                            <span class="buy_result_value ssl_domain_type">多域名</span>
+                        </td>
+                        <td class="buy_result_brief_list">
+                            <span class="buy_result_name">购买数量:</span>
+                            <span class="buy_result_value buy_count">3</span>
+                        </td>
+                    </tr>
+                    <tr class="buy_result_brief">
+                        <td class="buy_result_brief_list">
+                            <span class="buy_result_name">证书种类:</span>
+                            <span class="buy_result_value ssl_type">支持型OV SSL</span>
+                        </td>
+                        <td class="buy_result_brief_list">
+                            <span class="buy_result_name">域名个数:</span>
+                            <span class="buy_result_value domain_count">20个</span>
+                        </td>
+                        <td class="buy_result_brief_list">
+                            <span class="buy_result_name">证书时长:</span>
+                            <span class="buy_result_value buy_time">3年</span>
+                        </td>
+                    </tr>
+                </table>
+                <div class="buy_sum_all">
+                    <span>总计费用：￥</span>
+                    <span class="num_bold"></span>
+                    <span class="num_saving"></span>
+                    <span class="buy_ssl_button">立即购买</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- buyssl end-->
+    <!-- footer start-->
+    <div class="footer">
+        <div class="foot">
+            <div class="foot_l">
+                <dl>
+                    <dt>服务支持</dt>
+                    <dd><a href="http://crm2.qq.com/page/portalpage/wpa.php?uin=4007200020&aty=2&a=5&curl=&ty=1">售前咨询</a></dd>
+                    <dd><a href="http://b.qq.com/webc.htm?new=0&sid=4007200020&eid=218808P8z8p8x8z8K&o=www.sundns.com&q=7&ref=http://www.sundns.com/amain_md_html_ac_pay.html#locateto">售后支持</a></dd>
+
+                    <dd><a href="http://www.sundns.com/amain_md_news_ac_newsdetail1_id_488.html">如何域名实名</a></dd>
+                    <dd><a href="http://icp.sundns.com/web/a/beianliucheng/2010/0629/82.html">网站备案入门</a></dd>
+                    <dd><a href="/amain_md_html_ac_download.html">下载专区</a></dd>
+
+                </dl>
+                <dl>
+                    <dt>支付与账户</dt>
+                    <dd><a href="/amain_md_html_ac_pay.html#locateto">在线支付</a></dd>
+                    <dd><a href="/amain_md_html_ac_pay.html#locateto">银行汇款</a></dd>
+                    <dd><a href="/amain_md_html_ac_fapiao.html">索取发票</a></dd>
+                    <dd><a href="/amain_md_html_ac_pay.html#locateto">付款说明</a></dd>
+                </dl>
+                <dl>
+                    <dt>常用网站</dt>
+                    <dd><a href="http://icp.sundns.com" target="_blank">备案中心</a></dd>
+                    <dd><a href="http://www.ufhost.com">控制面板</a></dd>
+                    <dd><a href="http://ptrack.sundns.com" target="_blank">在线答疑</a></dd>
+                    <dd><a href="http://help.sundns.com" target="_blank">帮助中心</a></dd>
+                </dl>
+                <dl>
+                    <dt>关于我们</dt>
+                    <dd><a href="/amain_md_html_ac_profile.html#locateto">关于有孚</a></dd>
+                    <dd><a href="/amain_md_html_ac_profile_sundns.html#locateto">关于阳光互联</a></dd>
+                    <dd><a href="/amain_md_html_ac_contact.html#locateto">联系我们</a></dd>
+                    <dd><a href="/amain_md_html_ac_profile_cert.html#locateto">荣誉资质</a></dd>
+                    <dd><a href="/amain_md_html_ac_link.html">友情链接</a></dd>
+                    <dd><a href="/amain_md_html_ac_partners.html">合作伙伴</a></dd>
+                    <!--<dd><a href="http://www.yovole.com/case.html">客户案例</a></dd>-->
+                    <!--				<dd><a href="http://idc.yovole.com">机房介绍</a></dd>-->
+                </dl>
+                <dl>
+                    <dt>其它</dt>
+                    <dd><a href="/amain_md_news_ac_newslist.html#locateto">新闻中心</a></dd>
+                    <dd><a href="/main_md_sitepro_ac_customize.html">近期促销</a></dd>
+
+                    <dd><a href="/amain_md_html_ac_price.html">价格总览</a></dd>
+                    <dd><a href="/amain_md_html_ac_law.html">服务条款</a></dd>
+                    <dd><a href="/amain_md_html_ac_contact.html#locateto">投诉建议</a></dd>
+                </dl>
+            </div>
+            <div class="foot_r">
+                <dl>
+                    <dd>关注我们：</dd>
+                    <dd>
+                        <p class="qr_code1"><i></i>微信公众号</p>
+                        <!--					<p class="qr_code2"><i></i>新浪微博</p>-->
+                    </dd>
+                    <dt>售前咨询：<strong>400-720-0020&nbsp;转1</strong></dt>
+                </dl>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="foot_copyright">
+            <p>有孚网络旗下网站：<a href="http://www.sundns.com" target="_blank">阳光互联</a><a href="http://www.yovole.com" target="_blank">有孚网络</a><a href="http://www.suncloud.cn" target="_blank">阳光云</a><a href="http://sunuc.sundns.com" target="_blank">统一沟通</a><a href="http://sunuc.sundns.com/exchange_trusteeship.html"
+                    target="_blank">企业邮箱</a></p>
+            <p>《增值电信业务经营许可证》:<a target="_blank" href="../imgs/B220050383.gif">B1-20050383</a>&nbsp;&nbsp;<a target="_blank" href="../imgs/B1B2-20040073.jpg">沪B1.B2-20040073</a>&nbsp;&nbsp;<a target="_blank" href="../imgs/iso.gif">ISO9001国际标准质量体系认证</a>&nbsp;&nbsp;
+                <a target="_blank" href="../imgs/iso2.jpg">ISO27001信息安全认证</a>&nbsp;&nbsp;<a target="_blank" href="../imgs/ISO20000IT.jpg">ISO20000IT服务管理认证</a></p>
+            <p>Copyright &copy; 2001-2016Yovole All Rights Reserved</p>
+            <!--<p><a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=31011002000045" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="http://www.beian.gov.cn/file/ghs.png" style="float:left;"> &nbsp;&nbsp;沪公网安备 31011002000045号 </a></p>-->
+            <div style="width:300px;margin:4px auto; text-align:center;vertical-align:middle;position: relative;">
+                <li style="margin-left: -100px;"><a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=31011002000045" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;margin: 6px 4px;color: #71767d;"><img src="http://www.beian.gov.cn/file/ghs.png" style="float:left;margin: 1px 8px;">沪公网安备 31011002000045号</a>
+                    <a target="_blank" href="http://www.itrust.org.cn/home/index/itrust_certifi/wm/1703285567" style="position: absolute;"><img src="./imgs/gwrz-white-use.jpg"></a>
+                </li>
+                <!--<a href="http://webscan.360.cn/index/checkwebsite/url/www.sundns.com" style="position: absolute;margin:-30px auto auto 180px; "><img style="border:0;width: 80px;" src="http://img.webscan.360.cn/status/pai/hash/eaba56dcbf5fb55cc0b07fcbb5360270"/></a>-->
+            </div>
+        </div>
+    </div>
+    <!-- footer end-->
+</body>
+
+</html>

@@ -1,0 +1,1124 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<title>ssl证书</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="stylesheet" href="./css/all_css.css" type="text/css" > 
+	<script type="text/javascript" src="./js/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="./js/ssl.js"></script>
+	<script type="text/javascript" src="./js/YFNav.js" ></script>
+</head>
+<body>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#yfTopBar").YFNav();
+		$(".yftag").YFTag();
+		$("#navcloud").find(".nav_mainr_img").hover(function(){
+			$(".mainr_con_hover", $(this)).slideDown(500);
+		},function(){
+			$(".mainr_con_hover", $(this)).slideUp(500);
+		});
+	});
+	$(function(){
+//            $(".header_show").slide({titCell:".hd ",mainCell:".header_show_li",autoPage:false,trigger:"mouseover",scroll:1,effect:"top",autoPlay:true,vis:1});
+//		$("#yfTopBar").YFNav();
+//		$(".yftag").YFTag();
+//		$("#navcloud").find(".nav_mainr_img").hover(function(){
+//			$(".mainr_con_hover", $(this)).slideDown(500);
+//		},function(){
+//			$(".mainr_con_hover", $(this)).slideUp(500);
+//		});
+	});
+
+    $(function(){
+        $("#mymember_club").hover(function(){
+            var set_left=$('#mymember_club').position().left;
+            $("#member_club_block").css("left",set_left);
+            $("#member_club_block").css('display','block');
+        },function(){
+            $("#member_club_block").css('display','none');
+            $("#member_club_block").hover(function(){
+                $("#member_club_block").css('display','block');
+            },function(){
+                $("#member_club_block").css('display','none');
+            });
+        });
+        $("#member_club_block").find(".member_club_column").hover(function(){
+            $(this).find("span").css('color','#fb6902');
+        },function(){
+            $(this).find("span").css('color','#000000');
+        });
+    });
+
+
+    $(function(){
+        //多行应用
+        var _wrap=$('.header_show');//定义滚动区域
+        var _interval=2000;//定义滚动间隙时间
+        var _moving;//需要清除的动画
+        _wrap.hover(function(){
+            clearInterval(_moving);//当鼠标在滚动区域中时,停止滚动
+        },function(){
+            _moving=setInterval(function(){
+                var _field=_wrap.find('.header_show_li:first');//此变量不可放置于函数起始处,li:first取值是变化的
+                var _h=_field.height();//取得每次滚动高度
+                _field.animate({marginTop:-_h+'px'},600,function(){//通过取负margin值,隐藏第一行
+                    _field.css('marginTop',0).appendTo(_wrap);//隐藏后,将该行的margin值置零,并插入到最后,实现无缝滚动
+                })
+            },_interval)//滚动间隔时间取决于_interval
+        }).trigger('mouseleave');//函数载入时,模拟执行mouseleave,即自动滚动
+    });
+
+</script>
+
+
+	<!-- header start -->
+
+<div class="header_box">
+	<div class="topbox">
+		
+                    <div class="header_show">
+                                    <div class="header_show_li"><a href="/amain_md_news_ac_newsdetail1_id_499.html">有孚云管理平台升级</a> </div>
+                                    <div class="header_show_li"><a href="/amain_md_news_ac_newsdetail1_id_498.html">会员实名通知</a> </div>
+                            </div>
+        
+		<ul class="header_list">
+			
+			<li><a href="https://passport.sundns.com/index.php?client_id=sundns">登录</a>
+			<li  class="header_mymember"><a href="https://passport.sundns.com/index.php?r=index/regist&client_id=sundns">免费注册</a></li>
+						<li class="header_split"><a href="/amain_md_html_ac_pay.html#locateto">付款方式</a></li>
+			<li><a href="http://icp.sundns.com">备案</a></li>
+		</ul>
+		<div class="clear"></div>
+	</div>
+</div>
+<!-- header end -->
+
+
+
+<!-- nav start -->
+<div class="nav_box">
+    <!-- mymember_club -->
+        <!-- mymember_club -->
+	<div id="yfTopBar" class="nav">
+		<div class="logo"><a href="/index.php"></a></div>
+		<!--<a href="/amain_md_html_ac_newest_activity.html" class="nav_hot_activity">最新活动</a>-->
+		<ul class="nav_list" id="nav_menu">
+			<li>
+				<a class="nav_product_2017" href="#"><i class="nav_p_icon"></i>产品</a>
+				<div class="nav_list_box none">
+					<div class="list_main">
+						<div class="list_main_l">
+							<a class="selected" href="/main_md_domain_ac_whois.html">域名服务</a>
+							<a href="/web_hosting.php?script=asp">虚拟主机</a>
+							<a href="/cloud_server.php">云服务器</a>
+							<a href="/main_md_sitepro_ac_siteproproduct.html">成品网站</a>
+							<a href="/main_md_exchange_ac_mailbox.html?a=part0">企业邮箱</a>
+							<a href="http://ssl.sundns.com">安全证书</a>
+						</div>
+						<div class="list_main_content">
+							<div class="list_main_r">
+								<dl>
+									<dt>常用后缀</dt>
+									<dd><a href="/main_md_domain_ac_com.html">.com</a></dd>
+									<dd><a href="/main_md_domain_ac_cn.html">.cn</a></dd>
+									<dd><a href="/main_md_domain_ac_net.html">.net</a></dd>
+									<!--<dd><a href="/main_md_domain_ac_org.html">.org</a></dd>-->
+								</dl>
+								<dl>
+									<dt>域名注册</dt>
+									<dd><a href="/main_md_domain_ac_whois.html">英文域名</a></dd>
+									<dd><a href="/main.php?md=domain&ac=whois&domainch=1">中文域名</a></dd>
+								</dl>
+								<dl>
+									<dt>域名解析</dt>
+									<dd><a target="_blank" href="/main_md_domain_ac_zndns.html">阳光DNS</a></dd>
+								</dl>
+								<dl style="display:none">
+									<dt>域名交易</dt>
+									<dd><a href="http://try.sundns.com/member.php?module=mytransferin_international">域名转入</a></dd>
+									<dd><a href="#">二手域名购买</a></dd>
+								</dl>
+								<dl>
+									<dt>域名帮助</dt>
+									<dd><a target="_blank" href="http://whois.sundns.com">whois信息查询</a></dd>
+									<dd><a target="_blank"  href="http://help.sundns.com/">帮助中心</a></dd>
+								</dl>
+							</div>
+							<div class="list_main_r">
+								<dl>
+									<dt>ASP云虚拟主机</dt>
+									<dd><a href="/web_hosting.php?script=asp&spaceindex=1">ASP基础云</a></dd>
+									<dd><a href="/web_hosting.php?script=asp&spaceindex=2">ASP标准云</a></dd>
+									<dd><a href="/web_hosting.php?script=asp&spaceindex=3">ASP企业云</a></dd>
+									<dd><a href="/web_hosting.php?script=asp&spaceindex=4">ASP增强云</a></dd>
+									<dd><a href="/web_hosting.php?script=asp&spaceindex=5">ASP豪华云</a></dd>
+									<dd><a href="/web_hosting.php?script=asp&spaceindex=6">ASP旗舰云</a></dd>
+								</dl>
+								<dl>
+									<dt>.NET云虚拟主机</dt>
+									<dd><a href="/web_hosting.php?script=net&spaceindex=1">.NET基础云</a></dd>
+									<dd><a href="/web_hosting.php?script=net&spaceindex=2">.NET标准云</a></dd>
+									<dd><a href="/web_hosting.php?script=net&spaceindex=3">.NET企业云</a></dd>
+									<dd><a href="/web_hosting.php?script=net&spaceindex=4">.NET增强云</a></dd>
+									<dd><a href="/web_hosting.php?script=net&spaceindex=5">.NET豪华云</a></dd>
+									<dd><a href="/web_hosting.php?script=net&spaceindex=6">.NET旗舰云</a></dd>
+								</dl>
+								<dl>
+									<dt>PHP云虚拟主机</dt>
+									<dd><a href="/web_hosting.php?script=php&spaceindex=1">PHP基础云</a></dd>
+									<dd><a href="/web_hosting.php?script=php&spaceindex=2">PHP标准云</a></dd>
+									<dd><a href="/web_hosting.php?script=php&spaceindex=3">PHP企业云</a></dd>
+									<dd><a href="/web_hosting.php?script=php&spaceindex=4">PHP增强云</a></dd>
+									<dd><a href="/web_hosting.php?script=php&spaceindex=5">PHP豪华云</a></dd>
+									<dd><a href="/web_hosting.php?script=php&spaceindex=6">PHP旗舰云</a></dd>
+								</dl>
+							</div>
+							<div id="navcloud" class="list_main_r">
+								<dl>
+									<dt>华东</dt>
+									<dd>
+										<div class="nav_mainr_img">
+											<div class="mainr_con_org">
+												<div class="tit">华东</div>
+												<ul>
+													<li class="safe">
+														<p>安全</p>
+													</li>
+													<li class="stable">
+														<p>稳定</p>
+													</li>
+													<li class="ie">
+														<p>多线</p>
+													</li>
+													<li class="elastic">
+														<p>弹性</p>
+													</li>
+												</ul>
+												<div class="clear"></div>
+											</div>
+											<div class="mainr_con_hover">
+												<div class="hover_content">
+												<a href="/cloud_server.php" class="link">马上开通</a>
+													<p class="mid">电信<br/>BGP</p>
+													<p>阳光互联十年技术沉淀只为你</p>
+												</div>
+											</div>
+										</div>
+									</dd>
+								</dl>
+								<dl>
+									<dt>华北</dt>
+									<dd>
+										<div class="nav_mainr_img">
+											<div class="mainr_con_org">
+												<div class="tit">华北</div>
+												<ul>
+													<li class="safe">
+														<p>安全</p>
+													</li>
+													<li class="stable">
+														<p>稳定</p>
+													</li>
+													<li class="ie">
+														<p>多线</p>
+													</li>
+													<li class="elastic">
+														<p>弹性</p>
+													</li>
+												</ul>
+												<div class="clear"></div>
+											</div>
+											<div class="mainr_con_hover">
+												<div class="hover_content">
+													<a href="/cloud_server.php" class="link">马上开通</a>
+													<p class="mid">电信<br/>BGP</p>
+													<p>阳光互联十年技术沉淀只为你</p>
+												</div>
+											</div>
+										</div>
+									</dd>
+								</dl>
+								<dl>
+									<dt>香港</dt>
+									<dd>
+										<div class="nav_mainr_img">
+											<div class="mainr_con_org">
+												<div class="tit">香港</div>
+												<ul>
+													<li class="icp">
+														<p>免备案</p>
+													</li>
+													<li class="ip">
+														<p>独享IP</p>
+													</li>
+													<li class="ie">
+														<p>多线</p>
+													</li>
+													<li class="elastic">
+														<p>弹性</p>
+													</li>
+												</ul>
+												<div class="clear"></div>
+											</div>
+											<div class="mainr_con_hover">
+												<div class="hover_content">
+													<a href="http://www.cloudmap.hk/cloud_server.php" class="link">马上开通</a>
+													<p class="mid">免备案<br/>独享IP</p>
+													<p>阳光互联十年技术沉淀只为你</p>
+												</div>
+											</div>
+										</div>
+									</dd>
+								</dl>
+							</div>
+							<div class="list_main_r">
+								<dl>
+									<dt>PC+手机版</dt>
+									<dd><a href="/main_md_sitepro_ac_siteproproduct.html">标准版</a></dd>
+									<dd><a href="/main_md_sitepro_ac_siteproproduct.html">营销版</a></dd>
+								</dl>
+								<dl>
+									<dt>PC版</dt>
+									<dd><a href="/main_md_sitepro_ac_siteproproduct.html">标准版</a></dd>
+									<dd><a href="/main_md_sitepro_ac_siteproproduct.html">营销版</a></dd>
+								</dl>
+								<dl>
+									<dt>手机版</dt>
+									<dd><a href="/main_md_sitepro_ac_siteproproduct.html">标准版</a></dd>
+									<dd><a href="/main_md_sitepro_ac_siteproproduct.html">营销版</a></dd>
+								</dl>
+
+							</div>
+							<div id="nav_product_emailbox" class="list_main_r">
+								<dl>
+									<dt>企业邮</dt>
+									<dd><a href="javascript:void(0)" yf-mailtype="base" yf-user="5">企业邮2013[5用户]</a></dd>
+									<dd><a href="javascript:void(0)" yf-mailtype="base" yf-user="10">企业邮2013[10用户]</a></dd>
+									<dd><a href="javascript:void(0)" yf-mailtype="base" yf-user="20">企业邮2013[20用户]</a></dd>
+									<dd><a href="javascript:void(0)" yf-mailtype="base" yf-user="50">企业邮2013[50用户]</a></dd>
+									<dd><a href="javascript:void(0)" yf-mailtype="base" yf-user="100">企业邮2013[100用户]</a></dd>
+									<dd><a href="javascript:void(0)" yf-mailtype="base" yf-user="200">企业邮2013[200用户]</a></dd>
+								</dl>
+								<!--<dl>
+									<dt>商务G邮</dt>
+									<dd><a href="javascript:void(0)" yf-mailtype="crop" yf-user="5">商务邮2013[5用户]</a></dd>
+									<dd><a href="javascript:void(0)" yf-mailtype="crop" yf-user="10">商务邮2013[10用户]</a></dd>
+									<dd><a href="javascript:void(0)" yf-mailtype="crop" yf-user="20">商务邮2013[20用户]</a></dd>
+									<dd><a href="javascript:void(0)" yf-mailtype="crop" yf-user="50">商务邮2013[50用户]</a></dd>
+									<dd><a href="javascript:void(0)" yf-mailtype="crop" yf-user="100">商务邮2013[100用户]</a></dd>
+									<dd><a href="javascript:void(0)" yf-mailtype="crop" yf-user="200">商务邮2013[200用户]</a></dd>
+								</dl>-->
+								<dl>
+									<dt>协作邮</dt>
+									<dd><a href="javascript:void(0)" yf-mailtype="coll" yf-user="5">协作邮2013[5用户]</a></dd>
+									<dd><a href="javascript:void(0)" yf-mailtype="coll" yf-user="10">协作邮2013[10用户]</a></dd>
+									<dd><a href="javascript:void(0)" yf-mailtype="coll" yf-user="20">协作邮2013[20用户]</a></dd>
+									<dd><a href="javascript:void(0)" yf-mailtype="coll" yf-user="50">协作邮2013[50用户]</a></dd>
+									<dd><a href="javascript:void(0)" yf-mailtype="coll" yf-user="100">协作邮2013[100用户]</a></dd>
+									<dd><a href="javascript:void(0)" yf-mailtype="coll" yf-user="200">协作邮2013[200用户]</a></dd>
+								</dl>
+							</div>
+							<div class="list_main_r">
+								<dl>
+									<dt>Symantec</dt>
+									<dd><a href="https://ssl.sundns.com/?cert=Symantec&type=EV">EV SSL证书</a></dd>
+									<dd><a href="https://ssl.sundns.com/?cert=Symantec&type=OV">OV SSL证书</a></dd>
+								</dl>
+								<dl>
+									<dt>Geotrust</dt>
+									<dd><a href="https://ssl.sundns.com/?cert=Geotrust&type=EV">EV SSL证书</a></dd>
+									<dd><a href="https://ssl.sundns.com/?cert=Geotrust&type=OV">OV SSL证书</a></dd>
+									<dd><a href="https://ssl.sundns.com/?cert=Geotrust&type=DV">DV SSL证书</a></dd>
+								</dl>
+								<dl>
+									<dt>GlobalSign</dt>
+									<dd><a href="https://ssl.sundns.com/?cert=GlobalSign&type=EV">EV SSL证书</a></dd>
+									<dd><a href="https://ssl.sundns.com/?cert=GlobalSign&type=OV">OV SSL证书</a></dd>
+									<dd><a href="https://ssl.sundns.com/?cert=GlobalSign&type=DV">DV SSL证书</a></dd>
+								</dl>
+								<dl>
+									<dt>Entrust</dt>
+									<dd><a href="https://ssl.sundns.com/?cert=Entrust&type=EV">EV SSL证书</a></dd>
+									<dd><a href="https://ssl.sundns.com/?cert=Entrust&type=OV">OV SSL证书</a></dd>
+								</dl>
+								<dl>
+									<dt>Thawte</dt>
+									<dd><a href="https://ssl.sundns.com/?cert=Thawte&type=EV">EV SSL证书</a></dd>
+									<dd><a href="https://ssl.sundns.com/?cert=Thawte&type=OV">OV SSL证书</a></dd>
+									<dd><a href="https://ssl.sundns.com/?cert=Thawte&type=DV">DV SSL证书</a></dd>
+								</dl>
+								<dl>
+									<dt>RapidSSL</dt>
+									<dd><a href="https://ssl.sundns.com/?cert=RapidSSL&type=DV">DV SSL证书</a></dd>
+								</dl>
+								<dl>
+									<dt>在线工具</dt>
+									<dd><a href="https://ssl.sundns.com/tool/csrgenerator">CSR在线生成</a></dd>
+									<dd><a href="https://ssl.sundns.com/tool/sealinstall">签章脚本生成</a></dd>
+								</dl>
+							</div>
+						</div>
+					    <div style="clear:both"></div>
+					</div>
+				</div>
+			</li>
+			<li><a href="/main_md_domain_ac_whois.html">域名注册</a></li>
+			<li><a href="/web_hosting.php?script=asp">虚拟主机</a></li>
+			<li><a href="/cloud_server.php">云服务器</a></li>
+			<li><a href="http://ssl.sundns.com">SSL证书</a></li>
+
+			<li><a href="/main_md_sitepro_ac_siteproproduct.html">成品网站</a></li>
+			<li><a href="/main_md_exchange_ac_mailbox.html">企业邮局</a></li>
+			<li><a href="/amain_md_news_ac_tradelist.html">行业资讯</a></li>
+<!--			<li><a class="nav_support" href="http://help.sundns.com">支持</a></li>-->
+<!--			<li><a class="nav_about" href="/amain_md_html_ac_profile.html#locateto">关于我们</a></li>-->
+<!--			<li><a class="nav_more" href="#">更多</a></li>-->
+<!--			<li><a class="nav_record" href="http://icp.sundns.com">备案中心</a></li>-->
+
+			<li><a class=" nav_record shoppingcart" href="/shoppingcart.php" target="_blank">购物车</a></li>
+		</ul>
+	</div>
+</div>
+<!-- nav end-->
+<!-- banner start-->
+	<div class="domain_banner">
+		<ul class="ssl_banner">
+			<li class="fst_li">
+				<div class="containt_banner">
+					<div class="baner_01_a">
+						<span>阳光互联SSL证书</span>
+						<!-- <p>SSL证书</p> -->
+						<em>在云上签发各品牌数字证书，实现网站HTTPS化，使网站可信，防劫持、防篡改、防监听。</em>
+					</div>
+					<div class="baner_01_b">
+						<a href="#">立即购买</a>
+					</div>
+				</div>
+			</li>
+		</ul>
+	</div>
+<!-- banner end-->
+<!-- ssl start-->
+	<div class="sec_main  sec_main_ssl">
+			<div class="sec_main_info">
+				<ul class="w_info">
+					<li>
+						<a href="#">企业上云专题（1）：解读云上架构最佳实践 | 有孚云公开课
+						</a>
+					</li>					
+					<li>
+						<a href="#">企业上云专题（2）：解读云上架构最佳实践 | 有孚云公开课
+						</a>
+					</li>					
+					<li>
+						<a href="#">企业上云专题（3）：解读云上架构最佳实践 | 有孚云公开课企业上云专题（五）：解读云上架构最佳实践 | 有孚云公开课
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div class="ssl_inner_cont">
+				
+						<div class="nav_fix">
+							<div class="web_sl">
+								<h1>企业网站</h1>
+								<i></i>
+							</div>
+							<ul class="five_anchor">
+								<li class="active">
+									<a href="#">
+										<p class="tet">
+											<img src="./img/geo.jpg" />
+										</p>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<p class="tet">
+											<img src="./img/sym.jpg" />
+										</p>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<p class="tet">
+											<img src="./img/glo.jpg" />
+										</p>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<p class="tet">
+											<img src="./img/ent.jpg" />
+										</p>
+									</a>
+								</li>
+								<li>
+									<a class="special_mar" href="#">
+										<p class="tet">
+											<img src="./img/cfc.jpg" />
+										</p>
+									</a>
+								</li>
+							</ul>
+						</div>
+				
+				<div class="ssl_pro" id="sec_menu1_cur">
+						<div class="bottom_line">
+							<dl>
+								<dt class="co_logo01">
+								</dt>
+								<dd>GeoTrust 是全球第二大数字证书颁发机构，从2001年成立到2006年占领全球市场25%的市场分额，于2006年成为了VeriSign 的全资子公司。
+								</dd>
+							</dl>
+						</div>
+						<div class="containt_ssl_both">
+							<div class="adv_all">
+								<div class="adv1">	
+									<ul class="con_table">
+									    <li class="adv_li">SHA-256和2048位加密</li>
+									    <li class="adv_li">支付宝接口回调</li>
+									    <li class="adv_li">JDK 1.6.19+</li>
+									    <li class="adv_li">人工审核域名及企业所有权</li>
+									    <li class="adv_li">微信支付及小程序</li>
+									    <li class="adv_li">Android 2.3.3+</li>
+									    <li class="adv_li">3-5个工作日签发</li>
+									    <li class="adv_li">Apple Store</li>
+									</ul>
+								</div>
+								<div class="adv2">	
+									<ul class="con_table">
+									    <li class="adv_li_special">需要提交资料:</li>
+									    <li class="adv_li">企业营业执照</li>
+									    <li class="adv_li">银行开户许可证（仅EV需要）</li>
+									</ul>
+								</div>
+							</div>
+
+							<div class="pur_list">
+								<table class="pur_table">
+									  <tr class="pur01_bottom">
+									    <th style="min-width:277px">
+									    	<div class="pur_item"><p>企业型OV</p><img src="./img/safe01.jpg" /></div>
+									    </th>
+										    <td class="discon" style="width:220px">
+										    	    <p class="discon_small">6.5折</p>
+											    	<div class="kind_items">
+												    	<span class="kind_ssl_name">单域名</span>
+												    	<i class="after_dis">折后价</i>
+												    	<p class="price_ssl"><span class="highlight_ssl">1676</span>元起</p>
+												    	<a class="pur_button" href="#">立即购买</a>
+											    	</div>										    
+										    </td>
+									   	<td class="discon" style="width:220px">
+									   		<p class="discon_small">6.5折</p>
+									    	<div class="kind_items">
+										    	<span class="kind_ssl_name">多域名</span>
+										    	<i class="after_dis">折后价</i>
+										    	<p class="price_ssl"><span class="highlight_ssl">3250</span>元起</p>
+										    	<a class="pur_button" href="www.baidu.com">立即购买</a>
+									    	</div>
+									    </td>
+									    <td class="discon" style="width:220px">
+									    	<p class="discon_small">6.5折</p>
+									    	<div class="kind_items">
+										    	<span class="kind_ssl_name">通配型</span>
+										    	<i class="after_dis">折后价</i>
+										    	<p class="price_ssl"><span class="highlight_ssl">4341</span>元起</p>
+										    	<a class="pur_button" href="www.suncloud.cn">立即购买</a>
+									    	</div>
+									    </td>
+									  </tr>
+									  <tr>
+									    <th>
+									    	<div class="pur_item"><p>增强型EV</p><img src="./img/safe02.jpg" /></div></th>
+									    <td class="discon">
+									    	<p class="discon_small">6.5折</p>
+									    	<div class="kind_items">
+										    	<span class="kind_ssl_name">单域名</span>
+										    	<i class="after_dis">折后价</i>
+										    	<p class="price_ssl"><span class="highlight_ssl">3250</span>元起</p>
+										    	<a class="pur_button" href="#">立即购买</a>
+									    	</div>
+									    </td>
+									   	<td class="discon">
+									   		<p class="discon_small">6.5折</p>
+									    	<div class="kind_items">
+										    	<span class="kind_ssl_name">多域名</span>
+										    	<i class="after_dis">折后价</i>
+										    	<p class="price_ssl"><span class="highlight_ssl">4550</span>元起</p>
+										    	<a class="pur_button" href="#">立即购买</a>
+									    	</div>
+									    </td>
+									    <td class="discon_last">
+									    	<div class="kind_items">
+										    	<p class="price_ssl_special">前往
+										    		<span class="sale_page"><a class="see_more" href="ssl_pur.html">售卖页面</a> </span>查看更多
+										    	</p>
+									    	</div>
+									    </td>
+									  </tr>
+								</table>
+							</div>
+					    </div>
+				</div>
+				<div class="ssl_pro" id="sec_menu2_cur">
+						<div class="bottom_line">
+							<dl>
+								<dt class="co_logo02">
+								</dt>
+								<dd>Symantec是 SSL/TLS 证书的领先提供商，为全球一百多万台网络服务器提供安全防护。
+								</dd>
+							</dl>
+						</div>
+						<div class="containt_ssl_both">
+							<div class="adv_all">
+								<div class="adv1">	
+									<ul class="con_table">
+									    <li class="adv_li">SHA-256和2048位加密</li>
+									    <li class="adv_li">支付宝接口回调</li>
+									    <li class="adv_li">JDK 1.6.19+</li>
+									    <li class="adv_li">人工审核域名及企业所有权</li>
+									    <li class="adv_li">微信支付及小程序</li>
+									    <li class="adv_li">Android 2.3.3+</li>
+									    <li class="adv_li">3-5个工作日签发</li>
+									    <li class="adv_li">Apple Store</li>
+									</ul>
+								</div>
+								<div class="adv2">	
+									<ul class="con_table">
+									    <li class="adv_li_special">需要提交资料:</li>
+									    <li class="adv_li">企业营业执照</li>
+									    <li class="adv_li">银行开户许可证（仅EV需要）</li>
+									</ul>
+								</div>
+							</div>
+
+							<div class="pur_list">
+								<table class="pur_table">
+									  <tr class="pur01_bottom">
+									    <th style="min-width:277px">
+									    	<div class="pur_item"><p>企业型OV</p><img src="./img/safe01.jpg" /></div>
+									    </th>
+										    <td class="discon" style="width:220px">
+										    	    <p class="discon_small">6.5折</p>
+											    	<div class="kind_items">
+												    	<span class="kind_ssl_name">单域名</span>
+												    	<i class="after_dis">折后价</i>
+												    	<p class="price_ssl"><span class="highlight_ssl">3250</span>元起</p>
+												    	<a class="pur_button" href="#">立即购买</a>
+											    	</div>										    
+										    </td>
+									   	<td class="discon" style="width:220px">
+									   		<p class="discon_small">6.5折</p>
+									    	<div class="kind_items">
+										    	<span class="kind_ssl_name">多域名</span>
+										    	<i class="after_dis">折后价</i>
+										    	<p class="price_ssl"><span class="highlight_ssl">6500</span>元起</p>
+										    	<a class="pur_button" href="www.baidu.com">立即购买</a>
+									    	</div>
+									    </td>
+									    <td class="discon" style="width:220px">
+									    	<p class="discon_small">6.5折</p>
+									    	<div class="kind_items">
+										    	<span class="kind_ssl_name">通配型</span>
+										    	<i class="after_dis">折后价</i>
+										    	<p class="price_ssl"><span class="highlight_ssl">26000</span>元起</p>
+										    	<a class="pur_button" href="www.suncloud.cn">立即购买</a>
+									    	</div>
+									    </td>
+									  </tr>
+									  <tr>
+									    <th>
+									    	<div class="pur_item"><p>增强型EV</p><img src="./img/safe02.jpg" /></div></th>
+									    <td class="discon">
+									    	<p class="discon_small">6.5折</p>
+									    	<div class="kind_items">
+										    	<span class="kind_ssl_name">单域名</span>
+										    	<i class="after_dis">折后价</i>
+										    	<p class="price_ssl"><span class="highlight_ssl">5200</span>元起</p>
+										    	<a class="pur_button" href="#">立即购买</a>
+									    	</div>
+									    </td>
+									   	<td class="discon">
+									   		<p class="discon_small">6.5折</p>
+									    	<div class="kind_items">
+										    	<span class="kind_ssl_name">多域名</span>
+										    	<i class="after_dis">折后价</i>
+										    	<p class="price_ssl"><span class="highlight_ssl">10400</span>元起</p>
+										    	<a class="pur_button" href="#">立即购买</a>
+									    	</div>
+									    </td>
+									    <td class="discon_last">
+									    	<div class="kind_items">
+										    	<p class="price_ssl_special">前往
+										    		<span class="sale_page"><a class="see_more" href="ssl_pur.html">售卖页面</a> </span>查看更多
+										    	</p>
+									    	</div>
+									    </td>
+									  </tr>
+								</table>
+							</div>
+					    </div>
+				</div>
+				<div class="ssl_pro" id="sec_menu3_cur">
+						<div class="bottom_line">
+							<dl>
+								<dt class="co_logo03">
+								</dt>
+								<dd>GMO GlobalSign是全球最早的数字证书认证机构之一，一直致力于网络安全认证及数字证书服务，是一个备受信赖的 CA 和 SSL 数字证书提供商。
+								</dd>
+							</dl>
+						</div>
+						<div class="containt_ssl_both">
+							<div class="adv_all">
+								<div class="adv1">	
+									<ul class="con_table">
+									    <li class="adv_li">SHA-256和2048位加密</li>
+									    <li class="adv_li">支付宝接口回调</li>
+									    <li class="adv_li">JDK 1.6.19+</li>
+									    <li class="adv_li">人工审核域名及企业所有权</li>
+									    <li class="adv_li">微信支付及小程序</li>
+									    <li class="adv_li">Android 2.3.3+</li>
+									    <li class="adv_li">3-5个工作日签发</li>
+									    <li class="adv_li">Apple Store</li>
+									</ul>
+								</div>
+								<div class="adv2">	
+									<ul class="con_table">
+									    <li class="adv_li_special">需要提交资料:</li>
+									    <li class="adv_li">企业营业执照</li>
+									    <li class="adv_li">银行开户许可证（仅EV需要）</li>
+									</ul>
+								</div>
+							</div>
+
+							<div class="pur_list">
+								<table class="pur_table">
+									  <tr class="pur01_bottom">
+									    <th style="min-width:277px">
+									    	<div class="pur_item"><p>企业型OV</p><img src="./img/safe01.jpg" /></div>
+									    </th>
+										    <td class="discon" style="width:220px">
+										    	    <p class="discon_small">6.5折</p>
+											    	<div class="kind_items">
+												    	<span class="kind_ssl_name">单域名</span>
+												    	<i class="after_dis">折后价</i>
+												    	<p class="price_ssl"><span class="highlight_ssl">2424</span>元起</p>
+												    	<a class="pur_button" href="#">立即购买</a>
+											    	</div>										    
+										    </td>
+									   	<td class="discon" style="width:220px">
+									   		<p class="discon_small">6.5折</p>
+									    	<div class="kind_items">
+										    	<span class="kind_ssl_name">多域名</span>
+										    	<i class="after_dis">折后价</i>
+										    	<p class="price_ssl"><span class="highlight_ssl">4847</span>元起</p>
+										    	<a class="pur_button" href="www.baidu.com">立即购买</a>
+									    	</div>
+									    </td>
+									    <td class="discon" style="width:220px">
+									    	<p class="discon_small">6.5折</p>
+									    	<div class="kind_items">
+										    	<span class="kind_ssl_name">通配型</span>
+										    	<i class="after_dis">折后价</i>
+										    	<p class="price_ssl"><span class="highlight_ssl">8482</span>元起</p>
+										    	<a class="pur_button" href="www.suncloud.cn">立即购买</a>
+									    	</div>
+									    </td>
+									  </tr>
+									  <tr>
+									    <th>
+									    	<div class="pur_item"><p>增强型EV</p><img src="./img/safe02.jpg" /></div></th>
+									    <td class="discon">
+									    	<p class="discon_small">6.5折</p>
+									    	<div class="kind_items">
+										    	<span class="kind_ssl_name">单域名</span>
+										    	<i class="after_dis">折后价</i>
+										    	<p class="price_ssl"><span class="highlight_ssl">6422</span>元起</p>
+										    	<a class="pur_button" href="#">立即购买</a>
+									    	</div>
+									    </td>
+									   	<td class="discon">
+									   		<p class="discon_small">6.5折</p>
+									    	<div class="kind_items">
+										    	<span class="kind_ssl_name">多域名</span>
+										    	<i class="after_dis">折后价</i>
+										    	<p class="price_ssl"><span class="highlight_ssl">12844</span>元起</p>
+										    	<a class="pur_button" href="#">立即购买</a>
+									    	</div>
+									    </td>
+									    <td class="discon_last">
+									    	<div class="kind_items">
+										    	<p class="price_ssl_special">前往
+										    		<span class="sale_page"><a class="see_more" href="ssl_pur.html">售卖页面</a> </span>查看更多
+										    	</p>
+									    	</div>
+									    </td>
+									  </tr>
+								</table>
+							</div>
+					    </div>
+				</div>
+				<div class="ssl_pro" id="sec_menu4_cur">
+						<div class="bottom_line">
+							<dl>
+								<dt class="co_logo04">
+								</dt>
+								<dd>Entrust SSL全球服务器证书（标准版）不仅可为单独的WEB服务器提供身份安全鉴别，而且可以保证网站不被假冒。通过严格的鉴证流程，保证企业网站拥有全球信任级别。
+								</dd>
+							</dl>
+						</div>
+						<div class="containt_ssl_both">
+							<div class="adv_all">
+								<div class="adv1">	
+									<ul class="con_table">
+									    <li class="adv_li">SHA-256和2048位加密</li>
+									    <li class="adv_li">支付宝接口回调</li>
+									    <li class="adv_li">JDK 1.6.19+</li>
+									    <li class="adv_li">人工审核域名及企业所有权</li>
+									    <li class="adv_li">微信支付及小程序</li>
+									    <li class="adv_li">Android 2.3.3+</li>
+									    <li class="adv_li">3-5个工作日签发</li>
+									    <li class="adv_li">Apple Store</li>
+									</ul>
+								</div>
+								<div class="adv2">	
+									<ul class="con_table">
+									    <li class="adv_li_special">需要提交资料:</li>
+									    <li class="adv_li">企业营业执照</li>
+									    <li class="adv_li">银行开户许可证（仅EV需要）</li>
+									</ul>
+								</div>
+							</div>
+
+							<div class="pur_list">
+								<table class="pur_table">
+									  <tr class="pur01_bottom">
+									    <th style="min-width:277px">
+									    	<div class="pur_item"><p>企业型OV</p><img src="./img/safe01.jpg" /></div>
+									    </th>
+										    <td class="discon" style="width:220px">
+										    	    <p class="discon_small">7折</p>
+											    	<div class="kind_items">
+												    	<span class="kind_ssl_name">单域名</span>
+												    	<i class="after_dis">折后价</i>
+												    	<p class="price_ssl"><span class="highlight_ssl">2625</span>元起</p>
+												    	<a class="pur_button" href="#">立即购买</a>
+											    	</div>										    
+										    </td>
+									   	<td class="discon" style="width:220px">
+									   		<p class="discon_small">7折</p>
+									    	<div class="kind_items">
+										    	<span class="kind_ssl_name">多域名</span>
+										    	<i class="after_dis">折后价</i>
+										    	<p class="price_ssl"><span class="highlight_ssl">3375</span>元起</p>
+										    	<a class="pur_button" href="www.baidu.com">立即购买</a>
+									    	</div>
+									    </td>
+									    <td class="discon" style="width:220px">
+									    	<p class="discon_small">7折</p>
+									    	<div class="kind_items">
+										    	<span class="kind_ssl_name">通配型</span>
+										    	<i class="after_dis">折后价</i>
+										    	<p class="price_ssl"><span class="highlight_ssl">9000</span>元起</p>
+										    	<a class="pur_button" href="www.suncloud.cn">立即购买</a>
+									    	</div>
+									    </td>
+									  </tr>
+									  <tr>
+									    <th>
+									    	<div class="pur_item"><p>增强型EV</p><img src="./img/safe02.jpg" /></div></th>
+									    <td class="discon">
+									    	<p class="discon_small">7折</p>
+									    	<div class="kind_items">
+										    	<span class="kind_ssl_name">单域名</span>
+										    	<i class="after_dis">折后价</i>
+										    	<p class="price_ssl"><span class="highlight_ssl">5625</span>元起</p>
+										    	<a class="pur_button" href="#">立即购买</a>
+									    	</div>
+									    </td>
+									   	<td class="discon">
+									   		<p class="discon_small">7折</p>
+									    	<div class="kind_items">
+										    	<span class="kind_ssl_name">多域名</span>
+										    	<i class="after_dis">折后价</i>
+										    	<p class="price_ssl"><span class="highlight_ssl">6750</span>元起</p>
+										    	<a class="pur_button" href="#">立即购买</a>
+									    	</div>
+									    </td>
+									    <td class="discon_last">
+									    	<div class="kind_items">
+										    	<p class="price_ssl_special">前往
+										    		<span class="sale_page"><a class="see_more" href="ssl_pur.html">售卖页面</a> </span>查看更多
+										    	</p>
+									    	</div>
+									    </td>
+									  </tr>
+								</table>
+							</div>
+					    </div>
+				</div>
+				<div class="ssl_pro" id="sec_menu5_cur">
+						<div class="bottom_line">
+							<dl>
+								<dt class="co_logo05">
+								</dt>
+								<dd>中国金融认证中心(CFCA)证书，由中国数字证书认证机构自主研发，纯国产证书。
+								</dd>
+							</dl>
+						</div>
+						<div class="containt_ssl_both">
+							<div class="adv_all">
+								<div class="adv1">	
+									<ul class="con_table">
+									    <li class="adv_li">人工审核域名及企业所有权</li>
+									    <li class="adv_li">Mac OS 10.12.1及以上版本</li>
+									    <li class="adv_li">Apple Store</li>
+									    <li class="adv_li">3-5个工作日签发</li>
+									    <li class="adv_li">iOS 10.1及以上版本</li>
+									    <li class="adv_li">Windows 平台浏览器</li>
+									    <li class="adv_li">Android 6.0及以上版本</li>
+									</ul>
+								</div>
+								<div class="adv2">	
+									<ul class="con_table">
+									    <li class="adv_li_special">需要提交资料:</li>
+									    <li class="adv_li">企业营业执照</li>
+									    <li class="adv_li">律师证（仅EV需要）</li>
+									    <li class="adv_li_spetop">申请表、授权书、律师函（证书控制台提供模板）</li>
+									</ul>
+								</div>
+							</div>
+
+							<div class="pur_list">
+								<table class="pur_table">
+									  <tr class="pur01_bottom">
+									    <th style="min-width:277px">
+									    	<div class="pur_item"><p>企业型OV</p><img src="./img/safe01.jpg" /></div>
+									    </th>
+										    <td class="discon" style="width:220px">
+										    	    <p class="discon_small">6.5折</p>
+											    	<div class="kind_items">
+												    	<span class="kind_ssl_name">单域名</span>
+												    	<i class="after_dis">折后价</i>
+												    	<p class="price_ssl"><span class="highlight_ssl">2600</span>元起</p>
+												    	<a class="pur_button" href="#">立即购买</a>
+											    	</div>										    
+										    </td>
+									   	<td class="discon" style="width:220px">
+									   		<p class="discon_small">6.5折</p>
+									    	<div class="kind_items">
+										    	<span class="kind_ssl_name">多域名</span>
+										    	<i class="after_dis">折后价</i>
+										    	<p class="price_ssl"><span class="highlight_ssl">3900</span>元起</p>
+										    	<a class="pur_button" href="www.baidu.com">立即购买</a>
+									    	</div>
+									    </td>
+									    <td class="discon" style="width:220px">
+									    	<p class="discon_small">6.5折</p>
+									    	<div class="kind_items">
+										    	<span class="kind_ssl_name">通配型</span>
+										    	<i class="after_dis">折后价</i>
+										    	<p class="price_ssl"><span class="highlight_ssl">9750</span>元起</p>
+										    	<a class="pur_button" href="www.suncloud.cn">立即购买</a>
+									    	</div>
+									    </td>
+									  </tr>
+									  <tr>
+									    <th>
+									    	<div class="pur_item"><p>增强型EV</p><img src="./img/safe02.jpg" /></div></th>
+									    <td class="discon">
+									    	<p class="discon_small">6.5折</p>
+									    	<div class="kind_items">
+										    	<span class="kind_ssl_name">单域名</span>
+										    	<i class="after_dis">折后价</i>
+										    	<p class="price_ssl"><span class="highlight_ssl">6500</span>元起</p>
+										    	<a class="pur_button" href="#">立即购买</a>
+									    	</div>
+									    </td>
+									   	<td class="discon">
+									   		<p class="discon_small">6.5折</p>
+									    	<div class="kind_items">
+										    	<span class="kind_ssl_name">多域名</span>
+										    	<i class="after_dis">折后价</i>
+										    	<p class="price_ssl"><span class="highlight_ssl">9750</span>元起</p>
+										    	<a class="pur_button" href="#">立即购买</a>
+									    	</div>
+									    </td>
+									    <td class="discon_last">
+									    	<div class="kind_items">
+										    	<p class="price_ssl_special">前往
+										    		<span class="sale_page"><a class="see_more" href="ssl_pur.html">售卖页面</a> </span>查看更多
+										    	</p>
+									    	</div>
+									    </td>
+									  </tr>
+								</table>
+							</div>
+					    </div>
+				</div>
+
+				<div style="clear:both"></div>
+				<div class="identity_style_title add_mg">
+								<h1>证书类型</h1>
+								<i></i>
+				</div>	
+				<div class="identity_sty">
+					<table class="data_table">
+						<tr>
+							<th>对比</th>
+							<th style="width:27%">域名型DV</th>
+							<th style="width:27%">企业型OV</th>
+							<th style="width:27%">增强型EV</th>
+					    </tr>
+					    <tr>
+					    	<td class="add_cl">绿色地址栏<p>（以chrome为例）</p></td>
+					    	<td><img src="./img/ymxing.jpg" class="wh_style"/><p class="bottom_p">小锁标记+https</p></td>
+					    	<td><img src="./img/ymxing.jpg" class="wh_style"/><p class="bottom_p">小锁标记+https</p></td>
+					    	<td><img src="./img/zqxing.jpg" class="wh_style"/><p class="bottom_p">小锁标记+https+公司名称</p></td>
+					    </tr>
+					    <tr>
+					    	<td class="add_cl">一般用途</td>
+					    	<td>个人站点和应用<br/>简单的Https加密需求</td>
+					    	<td>电子商务站点和应用<br/>中小型企业站点</td>
+					    	<td>大型金融平台<br/>大型企业和政府机构站点</td>
+					    </tr>
+					    <tr>
+					    	<td class="add_cl">审核内容</td>
+					    	<td>域名所有权验证</td>
+					    	<td>全面的企业身份验证<br/>域名所有权验证</td>
+					    	<td>最高级的企业身份验证<br/>域名所有权验证</td>
+					    </tr>
+					    <tr>
+					    	<td class="add_cl">颁发时长</td>
+					    	<td>10分钟-24分钟</td>
+					    	<td>3-5个工作日</td>
+					    	<td>5-7个工作日</td>
+					    </tr>
+					    <tr>
+					    	<td class="add_cl">单次申请年限</td>
+					    	<td>1年</td>
+					    	<td>1-2年</td>
+					    	<td>1-2年</td>
+					    </tr>    
+					</table>
+				</div>
+			</div>
+			<div class="four_advs">
+				<div class="advs_inner">
+					<h1>阳光互联SSL证书4大优势</h1>
+					<ul class="four_adv_ul">
+						<li class="four_li">
+							<div class="four_adv_inner">
+								<span class="four_adv_icon1  adv_same_sprites"></span>
+								<h4 class="four_adv_h">顶级知名品牌合作<i>安全可信</i></h4>
+								<p class="four_adv_info">对接国际，国内最值得信赖的第三方数字证书颁发机构(CA)，确保数字证书认证可信力和加密强度、保障用户服务。</p>
+							</div>
+						</li>
+						<li class="four_li">
+							<div class="four_adv_inner">
+								<span class="four_adv_icon2  adv_same_sprites"></span>
+								<h4 class="four_adv_h">网站安全增强<i>提升搜索排名</i></h4>
+								<p class="four_adv_info">实现网站HTTPS化，加密用户与网站间的交互访问，强化网站用户侧可信展示程度，防劫持、防篡改、防监听。
+								采用Https加密的网站在搜索引擎显示结果中的排名将会更高，有利于提升网站的搜索靠前及站点可信度。
+								</p>
+							</div>
+						</li>
+						<li class="four_li">
+							<div class="four_adv_inner">
+								<span class="four_adv_icon3  adv_same_sprites"></span>
+								<h4 class="four_adv_h"><i class="ispecial">快速签发</i>SSL证书</h4>
+								<p class="four_adv_info">一键申请快捷高效。可以在一个平台下购买签发多个不同品牌的SSL数字证书，并按照提供应商提供的产品包来购买适合自己的业务的数字证书。</p>
+							</div>
+						</li>
+						<li class="four_li">
+							<div class="four_adv_inner">
+								<span class="four_adv_icon4  adv_same_sprites"></span>
+								<h4 class="four_adv_h">专业服务<i>快速部署</i></h4>
+								<p class="four_adv_info">专业的SSL证书运营人员随时解答您证书使用过程的任何疑问，证书品牌、证书类型、资料准备、签发部署及后期使用过程中任何问题，均有专人为您耐心解答，加快证书选择、提交、审核速度。</p>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+	</div>
+<!-- ssl end-->
+<!-- footer start-->
+<div class="footer">
+	<div class="foot">
+		<div class="foot_l">
+			<dl>
+				<dt>服务支持</dt>
+				<dd><a href="http://crm2.qq.com/page/portalpage/wpa.php?uin=4007200020&aty=2&a=5&curl=&ty=1">售前咨询</a></dd>
+				<dd><a href="http://b.qq.com/webc.htm?new=0&sid=4007200020&eid=218808P8z8p8x8z8K&o=www.sundns.com&q=7&ref=http://www.sundns.com/amain_md_html_ac_pay.html#locateto">售后支持</a></dd>
+
+				<dd><a href="http://www.sundns.com/amain_md_news_ac_newsdetail1_id_488.html">如何域名实名</a></dd>
+				<dd><a href="http://icp.sundns.com/web/a/beianliucheng/2010/0629/82.html">网站备案入门</a></dd>
+				<dd><a href="/amain_md_html_ac_download.html">下载专区</a></dd>
+
+			</dl>
+			<dl>
+				<dt>支付与账户</dt>
+				<dd><a href="/amain_md_html_ac_pay.html#locateto">在线支付</a></dd>
+				<dd><a href="/amain_md_html_ac_pay.html#locateto">银行汇款</a></dd>
+				<dd><a href="/amain_md_html_ac_fapiao.html">索取发票</a></dd>
+				<dd><a href="/amain_md_html_ac_pay.html#locateto">付款说明</a></dd>
+			</dl>
+			<dl>
+				<dt>常用网站</dt>
+				<dd><a href="http://icp.sundns.com" target="_blank">备案中心</a></dd>
+				<dd><a href="http://www.ufhost.com">控制面板</a></dd>
+				<dd><a href="http://ptrack.sundns.com" target="_blank">在线答疑</a></dd>
+				<dd><a href="http://help.sundns.com" target="_blank">帮助中心</a></dd>
+			</dl>
+			<dl>
+				<dt>关于我们</dt>
+				<dd><a href="/amain_md_html_ac_profile.html#locateto">关于有孚</a></dd>
+				<dd><a href="/amain_md_html_ac_profile_sundns.html#locateto">关于阳光互联</a></dd>
+				<dd><a href="/amain_md_html_ac_contact.html#locateto">联系我们</a></dd>
+				<dd><a href="/amain_md_html_ac_profile_cert.html#locateto">荣誉资质</a></dd>
+				<dd><a href="/amain_md_html_ac_link.html">友情链接</a></dd>
+				<dd><a href="/amain_md_html_ac_partners.html">合作伙伴</a></dd>
+				<!--<dd><a href="http://www.yovole.com/case.html">客户案例</a></dd>-->
+<!--				<dd><a href="http://idc.yovole.com">机房介绍</a></dd>-->
+			</dl>
+			<dl>
+				<dt>其它</dt>
+				<dd><a href="/amain_md_news_ac_newslist.html#locateto">新闻中心</a></dd>
+				<dd><a href="/main_md_sitepro_ac_customize.html">近期促销</a></dd>
+
+				<dd><a href="/amain_md_html_ac_price.html">价格总览</a></dd>
+				<dd><a href="/amain_md_html_ac_law.html">服务条款</a></dd>
+				<dd><a href="/amain_md_html_ac_contact.html#locateto">投诉建议</a></dd>
+
+			</dl>
+		</div>
+		<div class="foot_r">
+			<dl>
+				<dd>关注我们：</dd>
+				<dd><p class="qr_code1"><i></i>微信公众号</p>
+<!--					<p class="qr_code2"><i></i>新浪微博</p>-->
+				</dd>
+				<dt>售前咨询：<strong>400-720-0020&nbsp;转1</strong></dt>
+			</dl>
+		</div>
+		<div class="clear"></div>
+	</div>
+	<div class="foot_copyright">
+		<p>有孚网络旗下网站：<a href="http://www.sundns.com"  target="_blank">阳光互联</a><a href="http://www.yovole.com" target="_blank">有孚网络</a><a  href="http://www.suncloud.cn" target="_blank">阳光云</a><a href="http://sunuc.sundns.com" target="_blank">统一沟通</a><a href="http://sunuc.sundns.com/exchange_trusteeship.html" target="_blank">企业邮箱</a></p>
+		<p>《增值电信业务经营许可证》:<a target="_blank" href="../imgs/B220050383.gif">B1-20050383</a>&nbsp;&nbsp;<a target="_blank" href="../imgs/B1B2-20040073.jpg">沪B1.B2-20040073</a>&nbsp;&nbsp;<a target="_blank" href="../imgs/iso.gif">ISO9001国际标准质量体系认证</a>&nbsp;&nbsp;<a target="_blank" href="../imgs/iso2.jpg">ISO27001信息安全认证</a>&nbsp;&nbsp;<a target="_blank" href="../imgs/ISO20000IT.jpg">ISO20000IT服务管理认证</a></p>
+		<p>Copyright &copy; 2001-2016Yovole All Rights Reserved</p>
+		<!--<p><a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=31011002000045" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="http://www.beian.gov.cn/file/ghs.png" style="float:left;"> &nbsp;&nbsp;沪公网安备 31011002000045号 </a></p>-->
+        <div style="width:300px;margin:4px auto; text-align:center;vertical-align:middle;position: relative;">
+            <li style="margin-left: -100px;"><a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=31011002000045" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;margin: 6px 4px;color: #71767d;"><img src="http://www.beian.gov.cn/file/ghs.png" style="float:left;margin: 1px 8px;">沪公网安备 31011002000045号</a><a target="_blank" href="http://www.itrust.org.cn/home/index/itrust_certifi/wm/1703285567" style="position: absolute;"><img src="./imgs/gwrz-white-use.jpg" ></a></li>
+            <!--<a href="http://webscan.360.cn/index/checkwebsite/url/www.sundns.com" style="position: absolute;margin:-30px auto auto 180px; "><img style="border:0;width: 80px;" src="http://img.webscan.360.cn/status/pai/hash/eaba56dcbf5fb55cc0b07fcbb5360270"/></a>-->
+            </div>
+    </div>
+</div>
+<!-- footer end-->
+<script type="text/javascript">
+	$(document).ready(function(){cMenu.secMenuScroll()});
+</script>
+	</body>
+</html>
