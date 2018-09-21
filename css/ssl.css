@@ -650,6 +650,7 @@ a.see_more{
 }
 .buy_result_brief_list{
 	padding-right: 90px;
+	min-width: 280px;
 }
 .buy_result_name{
 	color:#999;
