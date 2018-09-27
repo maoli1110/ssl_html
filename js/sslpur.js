@@ -34,10 +34,37 @@ function getCount(count,domainType) {
 }
 
 /**
+ * 定位到对应配置
+ * @param  {array} packInfo 跳转过来的ssl配置信息
+ */
+function locate(packInfo){
+    let packObject = {}
+    packInfo.forEach(function(value,key){
+        let tempKey = value.split("=")[0];
+        let tempValue = value.split("=")[1];
+        packObject[tempKey] = tempValue;
+        switch (tempKey){
+            case "brand":
+            $('#'+tempValue+'').addClass("active").siblings().removeClass("active");
+            break;
+            case "type":
+            $('#'+packObject.brand+'-'+tempValue+'').addClass("active").siblings().removeClass("active");
+            break;
+            case "domaintype":
+            $("#ssl_domain_type > a").unbind().click(function() {
+                domaintypeClick($(this).attr("id"));
+            });
+            $('#'+tempValue+'').click();
+            break;
+        }
+    })
+}
+
+/**
  * 初始化ssl信息
  * @param  {string} brand 证书品牌
  */
-function init(brand) {
+function init(brand,isFirst) {
     let currentSSLType = ssl[brand];
     let currentDomainType = [];
     $("#ssl_type").empty();
@@ -61,7 +88,13 @@ function init(brand) {
         }
         $("#ssl_domain_type").append(tempHtml);
     }
-    getCount(count, currentDomainType[0].id);
+    let packInfo = location.search?location.search.split('?')[1].split('&'):'';//url携带的参数信息
+    if(!packInfo || !isFirst){
+        getCount(count, currentDomainType[0].id);
+    }
+    if(packInfo && isFirst){
+        locate(packInfo);
+    }
 }
 /**
  * 点击证书类型
@@ -132,26 +165,26 @@ function buycountClick(){
 
 $(function () {
 
-    init('Symantec');
+    init('Symantec',true);
 
     $(".buy_list .buy_list_block .buy_click").click(function () {
         $(this).addClass("active").siblings().removeClass("active");
     });
     //证书品牌
-    $("#ssl_brand > a").click(function() {
+    $("#ssl_brand > a").unbind().click(function() {
         let brand = $(this).attr("id");
-        init(brand);
+        init(brand,false);
     })
     //证书种类
-    $("#ssl_type > a").click(function() {
+    $("#ssl_type > a").unbind().click(function() {
         ssltypeClick($(this).attr("id"));
     })
     //域名类型
-    $("#ssl_domain_type > a").click(function() {
+    $("#ssl_domain_type > a").unbind().click(function() {
         domaintypeClick($(this).attr("id"));
     })
     //购买时长
-    $("#buytime_count > a").click(function () {
+    $("#buytime_count > a").unbind().click(function () {
         getPrice();
     })
     //点击购买数量
