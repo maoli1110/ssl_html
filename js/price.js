@@ -20,7 +20,6 @@ function getPrice() {
     setTimeout(() => {
         getCurrentGoodsInfo() //展示当前配置信息
         goodsInfoArray = combindSSLParam(); //组装价格参数
-        // console.log(goodsInfoArray,'goodsInfoArray')
         //随机生成价格返回值
         currentPriceInfo.currentprice = Math.floor(Math.random()*1000+1);
         currentPriceInfo.save = Math.floor(Math.random()*1000+1);
@@ -46,7 +45,7 @@ function getPrice() {
         //     }
         // }); 
         
-    }, 50);
+    }, 500);
 }
 
 /**

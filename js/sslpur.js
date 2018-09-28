@@ -4,6 +4,7 @@
  * @param  {string} domainType 域名类型
  */
 function getCount(count,domainType) {
+    // console.log("getCount")
     let currentCount = count[domainType];
     $("#domain_count").empty();
     for(let i=0;i<currentCount.length;i++){
@@ -45,20 +46,34 @@ function locate(packInfo){
         packObject[tempKey] = tempValue;
         switch (tempKey){
             case "brand":
+            // $('#'+tempValue+'').click();
             $('#'+tempValue+'').addClass("active").siblings().removeClass("active");
             break;
             case "type":
-            $('#'+packObject.brand+'-'+tempValue+'').addClass("active").siblings().removeClass("active");
+            $('#'+packObject.brand+'-'+tempValue+'').click();
+            // $('#'+packObject.brand+'-'+tempValue+'').addClass("active").siblings().removeClass("active");
             break;
             case "domaintype":
-            $("#ssl_domain_type > a").unbind().click(function() {
-                domaintypeClick($(this).attr("id"));
-            });
             $('#'+tempValue+'').click();
             break;
         }
     })
 }
+/**
+ * 获取对应配置对象
+ * @param  {array} packInfo 跳转过来的ssl配置信息
+ */
+function getPackInfoObj(packInfo){
+    let packObject = {}
+    packInfo.forEach(function(value,key){
+        let tempKey = value.split("=")[0];
+        let tempValue = value.split("=")[1];
+        packObject[tempKey] = tempValue;
+    })
+    return packObject;
+}
+
+
 
 /**
  * 初始化ssl信息
@@ -93,8 +108,27 @@ function init(brand,isFirst) {
         getCount(count, currentDomainType[0].id);
     }
     if(packInfo && isFirst){
-        locate(packInfo);
+        setTimeout(()=>{
+             locate(packInfo);
+         },50)
     }
+    //证书品牌
+    $("#ssl_brand > a").unbind().click(function() {
+        let brand = $(this).attr("id");
+        init(brand,false);
+    })
+    //证书种类
+    $("#ssl_type > a").unbind().click(function() {
+        ssltypeClick($(this).attr("id"));
+    })
+    //域名类型
+    $("#ssl_domain_type > a").unbind().click(function() {
+        domaintypeClick($(this).attr("id"));
+    })
+    //购买时长
+    $("#buytime_count > a").unbind().click(function () {
+        getPrice();
+    })
 }
 /**
  * 点击证书类型
@@ -164,29 +198,16 @@ function buycountClick(){
 }
 
 $(function () {
-
-    init('Symantec',true);
-
+    let packInfo = location.search?location.search.split('?')[1].split('&'):'';//url携带的参数信息
+    if(packInfo){
+        let packInfoObj = getPackInfoObj(packInfo);
+        init(packInfoObj.brand,true);
+    } else {
+        init('Symantec',true);
+    }
     $(".buy_list .buy_list_block .buy_click").click(function () {
         $(this).addClass("active").siblings().removeClass("active");
     });
-    //证书品牌
-    $("#ssl_brand > a").unbind().click(function() {
-        let brand = $(this).attr("id");
-        init(brand,false);
-    })
-    //证书种类
-    $("#ssl_type > a").unbind().click(function() {
-        ssltypeClick($(this).attr("id"));
-    })
-    //域名类型
-    $("#ssl_domain_type > a").unbind().click(function() {
-        domaintypeClick($(this).attr("id"));
-    })
-    //购买时长
-    $("#buytime_count > a").unbind().click(function () {
-        getPrice();
-    })
     //点击购买数量
     buycountClick();
 });
