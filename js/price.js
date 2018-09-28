@@ -13,13 +13,16 @@ let currentPriceInfo = { //实时的价格参数
     save:''             //节省价格
 };
 
+let oldTime;
 /** 
  * 根据配置获取价格ajax
  */
-function getPrice() {
+function getPrice(currentTime) {
+    if(currentTime - oldTime <50) return;
     setTimeout(() => {
         getCurrentGoodsInfo() //展示当前配置信息
         goodsInfoArray = combindSSLParam(); //组装价格参数
+        console.log(goodsInfoArray,'goodsInfoArray')
         //随机生成价格返回值
         currentPriceInfo.currentprice = Math.floor(Math.random()*1000+1);
         currentPriceInfo.save = Math.floor(Math.random()*1000+1);
@@ -44,8 +47,8 @@ function getPrice() {
         //         // alert("请求失败");
         //     }
         // }); 
-        
-    }, 500);
+    }, 50);
+    oldTime = currentTime;
 }
 
 /**

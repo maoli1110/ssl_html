@@ -15,7 +15,7 @@ function getCount(count,domainType) {
         }
         $("#domain_count").append(tempHtml);
     }
-    getPrice();
+    getPrice(Date.parse(new Date()));
     // 重新绑定事件
     // 证书类型
     $("#ssl_type > a").unbind().click(function () {
@@ -127,7 +127,7 @@ function init(brand,isFirst) {
     })
     //购买时长
     $("#buytime_count > a").unbind().click(function () {
-        getPrice();
+        getPrice(Date.parse(new Date()));
     })
 }
 /**
@@ -162,7 +162,7 @@ function domaintypeClick(type) {
  * 点击域名个数
  */
 function domaincountClick() {
-    getPrice();
+    getPrice(Date.parse(new Date()));
 }
 /**
  * 点击购买个数
@@ -176,7 +176,7 @@ function buycountClick(){
     $(".buy_add").click(function() {
         // 给获取的val加上绝对值，避免出现负数
         t.val(Math.abs(parseInt(t.val())) + 1);
-        getPrice();
+        getPrice(Date.parse(new Date()));
         if (parseInt(t.val()) != 1) {
             $('.buy_subtract').attr('disabled', false).removeClass("img_grey1");
         };
@@ -187,7 +187,7 @@ function buycountClick(){
     //数量减少操作
     $(".buy_subtract").click(function() {
         t.val(Math.abs(parseInt(t.val())) - 1);
-        getPrice();
+        getPrice(Date.parse(new Date()));
         if (parseInt(t.val()) == 1) {
             $('.buy_subtract').attr('disabled', true).addClass("img_grey1");
         };
